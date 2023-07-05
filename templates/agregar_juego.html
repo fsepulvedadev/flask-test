@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block titulo %} Agregar juego {% endblock %} {%
+block content %}
+
+<section>
+  <h3 class="text-xl font-bold text-center my-4">Agregar juego</h3>
+  <div>
+    <form
+      action="{{url_for('views.agregar_juego')}}"
+      method="post"
+      class="grid gap-2"
+    >
+      <label for="nombre">Nombre:</label>
+      <input
+        type="text"
+        value=""
+        required
+        class="input input-bordered"
+        placeholder="Nombre"
+        name="nombre"
+        id="nombre"
+      />
+      <label for="descripcion">Descripcion:</label>
+      <textarea
+        type="text"
+        required
+        class="textarea textarea-bordered"
+        placeholder="Descripcion"
+        name="descripcion"
+        id="descripcion"
+        rows="4"
+      >
+      </textarea>
+      <label for="precio">Precio:</label>
+      <input
+        type="number"
+        value=""
+        required
+        class="input input-bordered"
+        placeholder="Precio"
+        name="precio"
+        id="precio"
+      />
+      <div class="flex justify-between items-center">
+        <button type="submit" class="btn mt-2 btn-success capitalize">
+          Agregar
+        </button>
+        <a
+          href="{{url_for('views.home')}}"
+          class="btn btn-primary mt-2 capitalize"
+          >Volver</a
+        >
+      </div>
+    </form>
+  </div>
+</section>
+
+{% endblock %}
